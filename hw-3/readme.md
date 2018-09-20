@@ -3,6 +3,7 @@ Miya Fordah
 ["Hello World!" Sketch](https://mafordah.github.io/120-work/hw-3/)
 
 # Summary
+
 This homework cycle I learned how to create a "Hello World!" sketch in p5.js including:
 * text
 * shapes
