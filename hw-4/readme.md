@@ -1,8 +1,8 @@
 Miya Fordah
 
-['Self Portrait']()
+['Self Portrait'](https://mafordah.github.io/120-work/hw-4/)
 
-#Summary
+# Summary
 
 This week I dived further into the world of drawing in p5.js. I learned more functions for primitive geometric shapes like:
 ```
@@ -29,7 +29,7 @@ quad('rgb(255,255,255,0.5)')
 
 Lastly, I learned about the order of operations of code and how to ensure an order through the use of the `push()` and `pop()` functions.
 
-#My Steps
+# My Steps
 
 This is the first real drawing we have gotten to do in p5.js. I started this project by mapping out what I wanted to do and deciding which shapes to use to accomplish my portrait. I then laid out the bare bones of the code I was about to write:
 
@@ -37,7 +37,7 @@ This is the first real drawing we have gotten to do in p5.js. I started this pro
 * Creating a canvas
 * Choosing a background color
 * Adding the draw function
-* translating (0,0) to the center of the canvas
+* Translating (0,0) to the center of the canvas
 * Commenting where the code for each part of my sketch (head, torso, etc.) should go
 
 I started my code with the head because I had the best idea of how to code it. I knew the code for the head and face would have to go at the very bottom of my code due to order of operations, and I had it mapped out as such. I added an ellipse centered in the upper third of the canvas. I then sporadically added different sized ellipses (circles) around the face for my hair. I then added facial features mostly using the `arc()` function with a few lines `line()` and rectangles `rect()` for my glasses and nose.
