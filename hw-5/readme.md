@@ -33,6 +33,6 @@ I am very curious how color plays into animations other than with a modulo as us
 
 # Helping Others
 
-There weren't any unresolved questions in the repo when I got to it. I did read through the problems everybody had just incase I ran across them myself. The majority of the questions people ask are about things I never even thought of or were easy enough that they were resolved really quickly.
+There weren't any unresolved questions in the repo when I got to it. I did read through the problems everybody had just incase I ran across them myself. The majority of the questions people ask are about things I never even thought of or were easy enough that they were resolved really quickly. I ended up helping someone last minute with their code not showing up. I put their code in atom and it worked for me so they may have been opening the wrong index or had a typo in the code.
 
 ###### I have been able to grasp more about animation in p5.js in the last week and can't wait to learn more so that I can furht execute some of my ideas.
