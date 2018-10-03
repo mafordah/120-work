@@ -1,5 +1,3 @@
-// ALGORITHMIC SKETCH
-
 // Define Variables
 let point = {};
   point.pos1X = 0;
