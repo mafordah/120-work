@@ -77,12 +77,28 @@ function fish(){
 
   //fish
   push();
+    translate(x, y);
     noStroke();
-    fill('rgb(255, 192, 105)');
-    ellipse(x, y, 40, 20);
-    triangle(x, y, x+30, y+10, x+30, y-10)
 
+    if(mouseY < height/2){
+      rotate(map(mouseX, 0, width, 0, PI));
+    } else if(mouseY > height/2){
+      rotate(map(mouseX, 0, width, 0, -PI));
+    }
+
+    fill('rgb(255, 192, 105)');
+    ellipse(0, 0, 40, 20);
+    triangle(0, 0, 26, 8, 26, -8);
+    ellipse(26, 0, 8, 16);
+    fill(255);
+    ellipse(2, 0, 7, 20);
+    ellipse(-8, 0, 6, 17);
+    ellipse(13, 0, 6, 15);
+    fill(0);
+    ellipse(-12, 0, 3);
   pop();
+
+
 
 
 
