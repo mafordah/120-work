@@ -219,7 +219,6 @@ function startScreen(){
 
 //game
 function gameScreen(){
-  //frameRate(60);
   background('rgb(24, 14, 51)');
   noCursor();
 
@@ -608,7 +607,7 @@ function fishTimer(){
   //add more fish over time
   let f = new Fish(width, random(height/20, height * 4/5));
   fish.push(f);
-  setTimeout(fishTimer, random(100, 2000));
+  setTimeout(fishTimer, random(500, 2000));
 }
 
 
@@ -687,7 +686,7 @@ class Angler{
       translate(angX, angY);
 
       //change animation if eating
-      if (mouseIsPressed){
+      if (mouseIsPressed && screen == 1){
         image(
           //call eat sprite sheet
           this.eat,
