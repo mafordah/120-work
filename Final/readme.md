@@ -48,3 +48,29 @@ From there I added menus that move with the screen being resized and text and bu
 * `pauseScreen` runs anytime the 'p' key is pressed and `gameScreen` is running.
 
 #### At this point I have a very simple game!!
+
+### Score Counter
+I decided to add a score counter which is just a display of a score variable that counts up each time a fish is eaten and refreshes each time the game starts. The addition of this changed what happens when you choose to end the game from pause. It now goes to the game over screen so that the score is displayed before the game ends.
+
+The score counter also makes the fish go faster. At 5, 10, 25, 50, 100, 250 and 500, the speed increases by one to three pixels.
+
+### Music
+I added music and sound effects. The game music is called in the setup and the eating sound effect is called right as a fish is  eaten.
+
+#### Game Music
+"Ambler" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 3.0 License
+http://creativecommons.org/licenses/by/3.0/
+
+#### Sound Effects
+"Water Drop Low" Mike Koenig (soundbible.com)
+Licensed under Creative Commons: By Attribution 3.0 License
+http://creativecommons.org/licenses/by/3.0/
+
+"Water Splash Sound" Mike Koenig (soundbible.com)
+Licensed under Creative Commons: By Attribution 3.0 License
+http://creativecommons.org/licenses/by/3.0/
+
+"Large Bubble" snottyboy (soundbible.com)
+Licensed under Creative Commons: By Attribution 3.0 License
+http://creativecommons.org/licenses/by/3.0/

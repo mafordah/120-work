@@ -9,6 +9,12 @@ let angY = -70;
 let health = 200;
 let constHealth;
 let hunger;
+let score = 0;
+let gameMusic;
+let menuMusic;
+let music;
+let eatSound;
+let splashSound;
 
 
 
@@ -19,12 +25,18 @@ function preload() {
     anglerEatSprite = loadImage('./data/anglerEatSprite.png');
     fishSprite = loadImage('./data/fishSprite.png');
     sand = loadImage('./data/sand.png');
+    music = loadSound('./data/Ambler.mp3');
+    eatSound = loadSound('./data/waterSound.mp3');
+    splashSound = loadSound('./data/splashSound.mp3');
+    bubbleSound = loadSound('./data/bubbleSound.mp3')
 }
 
 
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
+  music.setVolume(0.1);
+  music.loop();
 
   //limit fish
     fishTimer();
@@ -68,6 +80,7 @@ function mousePressed(){
   if (screen == 0){
     //play game
     screen = 1;
+    splashSound.play();
   } else if (
     //check if game paused and mouse in button
     screen == 3 &&
@@ -78,7 +91,9 @@ function mousePressed(){
   ){
     //play again from game over
     health = 200;
+    score = 0;
     screen = 1;
+    splashSound.play();
   } else if (
     //check if game pause and mouse in button
     screen == 3 &&
@@ -89,7 +104,9 @@ function mousePressed(){
   ){
     //return to menu from game over
     health = 200;
+    score = 0;
     screen = 0;
+    splashSound.play();
   } else if (
     //check if paused and mouse in button
     screen == 2 &&
@@ -100,7 +117,9 @@ function mousePressed(){
   ){
     //keep playing from pause
     health = health;
+    score = score;
     screen = 1;
+    splashSound.play();
   } else if (
     //check if paused and mouse in button
     screen == 2 &&
@@ -109,9 +128,11 @@ function mousePressed(){
     mouseY >= height * 3/5 - 35 &&
     mouseY <= height * 3/5 + 15
   ){
-    //return to menu from pause
+    //gameover from pause
     health = 200;
-    screen = 0;
+    score = score;
+    screen = 3;
+    bubbleSound.play();
   }
 }
 
@@ -120,7 +141,8 @@ function mousePressed(){
 function keyTyped(){
   //pause with 'p'
   if (key === 'p' && screen == 1){
-    screen = 2
+    screen = 2;
+    splashSound.play();
   }
 
   //Stops default browser function if it has one
@@ -273,8 +295,17 @@ function gameScreen(){
       }
       if (eaten) {
         health += 20;
+        score += 1;
+        eatSound.setVolume(0.1);
+        eatSound.play();
       }
     }
+
+  //score
+    fill('rgb(236, 111, 182)');
+    textSize(48);
+    textStyle(BOLD);
+    text(score, width/5, height/12);
 
   //healthBar
     let hunger = 0.25;
@@ -288,6 +319,7 @@ function gameScreen(){
     //die
       if (health <= 0){
         screen = 3;
+        bubbleSound.play();
       }
 
   //pause reminder
@@ -360,6 +392,12 @@ function pauseScreen(){
         fish.splice(i, 1);
       }
     }
+
+  //score
+    fill('rgb(236, 111, 182)');
+    textSize(48);
+    textStyle(BOLD);
+    text(score, width/5, height/12);
 
   //healthBar
     let hunger = 0;
@@ -511,6 +549,10 @@ function gameOverScreen(){
     fill(255);
     rect(width/2 - width/4, height/3, width/2, height/3, 20);
     //text
+      fill('rgb(236, 111, 182)');
+      textSize(80);
+      textStyle(BOLD);
+      text(score, width/2, height/4);
       fill('rgb(24, 14, 51)');
       textAlign(CENTER);
       textSize(16);
@@ -799,8 +841,24 @@ class Fish{
   }
 
   move(){
-    //move across the screen
-    this.x -= random(1, 7);
+    //move across the screen at different speeds based on score
+    if(score < 5){
+      this.x -= 3;
+    } else if(score < 10){
+      this.x -= 4;
+    } else if(score < 25){
+      this.x -= 5;
+    } else if (score < 50){
+      this.x -= 6;
+    } else if(score < 100){
+      this.x -= 8;
+    } else if(score < 250){
+      this.x -= 10;
+    } else if(score < 500){
+      this.x -= 12;
+    } else {
+      this.x -= 15;
+    }
   }
 
   draw(){
