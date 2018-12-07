@@ -1,5 +1,7 @@
 Miya Fordah
 
+['Final Project'](https://mafordah.github.io/120-work/Final/)
+
 # Final Project
 
 I started this project with the basic idea of the large and intimidating female angler fish. I started the project trying create backgrounds and set up the bare bones without too much detail. I made some backgrounds and foregrounds, but I immediately ran into a problem. No mater what I did, I couldn't get the images to display. I tried pulling it up in Google Chrome and it wouldn't stop loading. I googled it, and it turns out Chrome won't display images from the desktop so I had to continue the rest of the project testing it in Microsoft Edge. I ended up scrapping most of the images I made anyway, but I'm glad I figured it out before I tried making sprites.
@@ -77,3 +79,6 @@ http://creativecommons.org/licenses/by/3.0/
 
 ### Title
 The very last thing I added to this code was the title that I made in Illustrator.
+
+### Conclusions
+After finishing this game there were a couple of things I wanted to add but ended up leaving out. The first was having the music change on different screens of the game. Because the music was in the setup, I couldn't figure out how to update it without adding a button outside the canvas, and I wasn't a fan on how that looked. I also wanted to add a pause button but I also couldn't figure out how to do this without making an outside button. Lastly, I wanted to make an enemy, or at the very least a fish that would hurt you if you eat it. I couldn't come up with a sprite idea I liked for the character because apparently the angler fish has no natural known predators. It can even eat animals way larger than it, so I felt kind of stuck for ideas. I could have just made a different colored fish and explained in the instructions, but it didn't feel worth it. I also considered using Shiffman's tutorial on how to make a loading screen, but the game doesn't take too long of a time to load. Overall, I did what I wanted to do and made a playable game with a theme! It was a ton of fun, and I can see myself coming back to it when I learn some more coding and game design.

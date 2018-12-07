@@ -246,7 +246,7 @@ function startScreen(){
   //title
     image(
       title,
-      width/3,
+      width/2 - 250,
       height/20
     );
 
