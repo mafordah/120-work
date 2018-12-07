@@ -28,7 +28,8 @@ function preload() {
     music = loadSound('./data/Ambler.mp3');
     eatSound = loadSound('./data/waterSound.mp3');
     splashSound = loadSound('./data/splashSound.mp3');
-    bubbleSound = loadSound('./data/bubbleSound.mp3')
+    bubbleSound = loadSound('./data/bubbleSound.mp3');
+    title = loadImage('./data/titleCard.png');
 }
 
 
@@ -80,7 +81,9 @@ function mousePressed(){
   if (screen == 0){
     //play game
     screen = 1;
+    //play sound effect and return volume
     splashSound.play();
+    music.setVolume(0.1);
   } else if (
     //check if game paused and mouse in button
     screen == 3 &&
@@ -93,7 +96,9 @@ function mousePressed(){
     health = 200;
     score = 0;
     screen = 1;
+    //play sound effect and return volume
     splashSound.play();
+    music.setVolume(0.1);
   } else if (
     //check if game pause and mouse in button
     screen == 3 &&
@@ -106,7 +111,9 @@ function mousePressed(){
     health = 200;
     score = 0;
     screen = 0;
+    //play sound effect and return volume
     splashSound.play();
+    music.setVolume(0.1);
   } else if (
     //check if paused and mouse in button
     screen == 2 &&
@@ -119,7 +126,9 @@ function mousePressed(){
     health = health;
     score = score;
     screen = 1;
+    //play sound effect and return volume
     splashSound.play();
+    music.setVolume(0.1);
   } else if (
     //check if paused and mouse in button
     screen == 2 &&
@@ -132,7 +141,9 @@ function mousePressed(){
     health = 200;
     score = score;
     screen = 3;
+    //play sound effect and lower volume
     bubbleSound.play();
+    music.setVolume(0.05);
   }
 }
 
@@ -142,7 +153,9 @@ function keyTyped(){
   //pause with 'p'
   if (key === 'p' && screen == 1){
     screen = 2;
+    //play sound effect and lower volume
     splashSound.play();
+    music.setVolume(.05);
   }
 
   //Stops default browser function if it has one
@@ -229,6 +242,13 @@ function startScreen(){
     textSize(32);
     textStyle(BOLD);
     text('Click to Start', width/2, height * 3/5);
+
+  //title
+    image(
+      title,
+      width/3,
+      height/20
+    );
 
   //mouse
     fill('rgb(247, 221, 92)');
